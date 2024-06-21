@@ -6,12 +6,20 @@ import org.testng.annotations.Test;
 public class MyFirstTest
 {
    @Test
-           public void searchById() {
+   public void searchElements(){
        //1.открыть браузер
        //1.зайти на сайт
-       System.setProperties ("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+       System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
        WebDriver browser = new ChromeDriver();
+
        browser.get("https://www.saucedemo.com/");
        browser.findElement(By.id("user-name"));
+       browser.findElement(By.name("login-button"));
+       browser.findElement(By.cssSelector("login-box"));
+       browser.findElement(By.cssSelector("#login-button"));
+       browser.findElement (By.xpath("//tag[contains(text(),'performance_glitch_user')]");
+       browser.findElement (By.xpath( "//button[contains(text), 'Login')]");
        browser.quit();
    }
+
+
