@@ -18,7 +18,7 @@ public class MyFirstTest {
         browser.findElement(By.name("login-button"));
         browser.findElement(By.cssSelector(".login-box"));
         browser.findElement(By.cssSelector("#login-button"));
-        browser.findElement(By.xpath("//div[@class= 'login_credentials' and text()=\"standard_user\"]"));
+        browser.findElement(By.xpath("//div[@class= 'login_credentials' and text()='standard_user']"));
         browser.findElement(By.xpath("//*[@class = 'login_logo' and text() ='Swag Labs']"));
         browser.findElement(By.xpath("//*[contains(text(),'Accepted usernames are')]"));
         browser.findElement(By.xpath("//*[text()='error_user']//ancestor::div[@class = 'login_container']"));
