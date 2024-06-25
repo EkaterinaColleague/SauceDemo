@@ -9,10 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     public ChromeDriver driver = new ChromeDriver();
-
     LoginPage loginPage;
-
-
     @BeforeMethod
     public void setup() {
 
@@ -24,8 +21,6 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
     }
-
-
     @AfterMethod
     public void close() {
         driver.quit();
