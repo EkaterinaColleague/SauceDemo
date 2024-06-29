@@ -1,6 +1,4 @@
-package Tests;
-
-import org.openqa.selenium.By;
+package tests;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -28,6 +26,6 @@ public class LoginTest extends BaseTest {
     public void loginFalseTests(String user, String password, String expectedError) {
         loginPage.open();
         loginPage.login(user, password);
-        loginPage.getErrorMessage();
+        assertEquals(loginPage.getErrorMessage(),expectedError,"Error message is wrong");
     }
 }

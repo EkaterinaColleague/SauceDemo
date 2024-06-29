@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
@@ -13,7 +13,7 @@ public class DeleteFromCartTest extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
         productsPage.addToCart("Sauce Labs Backpack");
         productsPage.openCart();
-        driver.findElement(By.id("remove-sauce-labs-backpack")).click();
+        cartPage.deleteItem();
         assertEquals(driver.findElement(CART_CONTAINER).getText(), "");
     }
 }

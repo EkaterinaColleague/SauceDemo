@@ -3,10 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import javax.print.DocFlavor;
-
-import static org.bouncycastle.cms.RecipientId.password;
-
 public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -20,7 +16,6 @@ public class LoginPage extends BasePage {
     private final By ERROR_MESSAGE = By.xpath("//*[@class= 'error-message-container error']");
     private String user;
 
-
     public void open() {
         driver.get(BASE_URL);
     }
@@ -31,7 +26,7 @@ public class LoginPage extends BasePage {
         driver.findElement(LOGIN_BUTTON).submit();
     }
 
-    public void getErrorMessage() {
-        driver.findElement(ERROR_MESSAGE).getText();
+    public String getErrorMessage() {
+        return driver.findElement(ERROR_MESSAGE).getText();
     }
 }

@@ -13,7 +13,10 @@ public class CartPage extends BasePage {
         super(driver);
         this.driver = driver;
     }
+
     private final By ITEM_NAME = By.cssSelector(".inventory_item_name");
+    private final By GOODS_NAME = By.id("remove-sauce-labs-backpack");
+
 
     public ArrayList<String> getAddedProductsNames() {
         List<WebElement> allProductsNames = driver.findElements(ITEM_NAME);
@@ -21,5 +24,9 @@ public class CartPage extends BasePage {
         for (WebElement productChosen : allProductsNames)
             names.add(productChosen.getText());
         return names;
+    }
+
+    public void deleteItem() {
+        driver.findElement(GOODS_NAME).click();
     }
 }
