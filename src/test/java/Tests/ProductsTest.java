@@ -11,6 +11,6 @@ public class ProductsTest extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
         productsPage.addToCart("Sauce Labs Backpack");
         productsPage.openCart();
-        assertTrue(cartPage.getProductsNames().contains("Sauce Labs Backpack"));
+        assertTrue(cartPage.getAddedProductsNames().contains("Sauce Labs Backpack"));
     }
 }

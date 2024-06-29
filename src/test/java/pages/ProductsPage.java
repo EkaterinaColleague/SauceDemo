@@ -16,6 +16,7 @@ public class ProductsPage extends BasePage {
     private final By TITLE = By.xpath("//*[@class= 'title']");
     private final By CART = By.cssSelector(".shopping_cart_link");
     private final String ADD_TO_CART_PATTERN = "//div[text() = '%s']//ancestor:: div[@class = 'inventory_item']//button[text() ='Add to cart']";
+    private final By ITEM_BUTTON = By.xpath("//*[@class='inventory_item']//button]");
 
     public String getTitle() {
         return driver.findElement(TITLE).getText();
@@ -24,10 +25,6 @@ public class ProductsPage extends BasePage {
     public void addToCart(String product) {
         By addToCartButton = By.xpath(String.format(ADD_TO_CART_PATTERN, product));
         driver.findElement(addToCartButton).click();
-    }
-
-    public void addToCartByIndex(int index) {
-        driver.findElements(By.xpath("//*[@class='inventory_item']//button")).get(2).click();
     }
 
     public void openCart() {

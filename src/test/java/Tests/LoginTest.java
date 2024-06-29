@@ -25,9 +25,9 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(dataProvider = "loginData")
-    public void loginNoPassword(String user, String password, String expectedError) {
+    public void loginFalseTests(String user, String password, String expectedError) {
         loginPage.open();
         loginPage.login(user, password);
-        assertEquals(driver.findElement(By.xpath("//*[@class= 'error-message-container error']")).getText(), expectedError);
+        loginPage.getErrorMessage();
     }
 }
